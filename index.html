@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #151F28;
+}
+
+.box:hover{
+    animation-play-state: paused;
+    
+}
+.box {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: animate 30s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+}
+
+.box span::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+     </style>
+    <title>3D Image Gallery  |  code_wars_official </title>
+</head>
+<body>
+
+    <div class="box">
+
+        <span style="--i:1"><img src="./1.jpg"></span>
+        <span style="--i:2"><img src="./2.jpg"></span>
+        <span style="--i:3"><img src="./3.jpg"></span>
+        <span style="--i:4"><img src="./4.jpg"></span>
+        <span style="--i:5"><img src="./5.jpg"></span>
+        <span style="--i:6"><img src="./6.jpg"></span>
+        <span style="--i:7"><img src="./7.jpg"></span>
+        <span style="--i:8"><img src="./8.jpg"></span>
+        <span style="--i:9"><img src="./9.jpg"></span>
+        <span style="--i:10"><img src="./10.jpg"></span>
+
+
+    
+
+
+    </div>
+
+    
+</body>
+</html>
